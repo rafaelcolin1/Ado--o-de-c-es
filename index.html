@@ -1,53 +1,66 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adoção de cães</title>
 </head>
+
 <body>
     <h2>Formulários de Adoção</h2>
 
-    <form>
+    <form id="formAdocao">
         <label for="nome">Nome: </label>
-        <input type="nome" id="nome" placeholder="Digite seu nome" minlength="3" required>
+        <input type="text" id="nome" placeholder="Digite seu nome">
         <br>
         <label for="email">Email: </label>
         <input type="email" id="email" placeholder="Digite seu email">
         <br>
         <label for="cpf">CPF: </label>
-        <input type="cpf" id="cpf" placeholder="Digite seu CPF">
+        <input type="number" id="cpf" placeholder="Digite seu CPF">
+        <br>
+        <label for="telefone">telefone: </label>
+        <input type="number" id="telefone" placeholder="Digite seu telefone">
         <br>
         <label for="idade">Idade: </label>
-        <input type="idade" id="idade" placeholder="Digite sua idade" min="18" oninput="idademin">
+        <input type="number" id="idade" placeholder="Digite sua idade">
         <br>
         <label for="cidade">Cidade: </label>
-        <input type="cidade" id="cidade" placeholder="Digite sua Cidade">
+        <input type="text" id="cidade" placeholder="Digite sua Cidade">
         <br>
         <label for="animal">Qunatas horas o animal ficará soinho?</label>
-        <input type="animal" id="animal" placeholder="Digite">
+        <input type="number" id="animal" placeholder="Digite">
         <br>
         <label for="adocao">Motivo de adoção: </label>
-        <input type="adocao" id="adocao" placeholder="Digite" minlength="10" required>
+        <input type="text" id="adocao" placeholder="Digite" minlength="10">
         <br>
-        <label for="Moradia">Moradia: </label>
-        <select name="Moradia" id="Moradia">
-        <option value="">Selecione</option>
-        <option value="Casa">Casa</option>
-        <option value="Apartamento">Apartamento</option>
+        <label for="moradia">Moradia: </label>
+        <select name="moradia" id="moradia">
+            <option value="">Selecione</option>
+            <option value="Casa">Casa</option>
+            <option value="Apartamento">Apartamento</option>
         </select>
         <br>
         <label for="quintal">Possui Quintal?</label>
-        <input type="radio" name="quintal" value="sim">Sim
-        <input type="radio" name="quintal" value="nao">Não
+        <input type="radio" name="quintal" value="quintalsim">Sim
+        <input type="radio" name="quintal" value="quinatlnao">Não
+        <br>
+         <label for="seguro">É seguro?</label>
+        <input type="radio" name="seguro" value="segurosim">Sim
+        <input type="radio" name="seguro" value="seguronao">Não
         <br>
         <label for="pet">Já teve pet antes?</label>
-        <input type="radio" name="pet" value="sim">Sim
-        <input type="radio" name="pet" value="nao">Não
+        <input type="radio" name="pet" value="petsim">Sim
+        <input type="radio" name="pet" value="petnao">Não
         <br>
         <label for="pet">Aceita os termos de responsabilidade?</label>
         <input type="radio" name="Responsabilidade" value="sim">Sim
         <br>
         <button type="submit">Enviar</button>
     </form>
+
+    <div id="resultado"></div>
+    <script src="scripts/adocao.js"></script>
 </body>
+
 </html>
