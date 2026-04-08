@@ -16,6 +16,8 @@ document.getElementById("formAdocao").addEventListener("submit", function (e) {
 
     if (nome.length < 3) return alert("Nome Inválido");
 
+    if (email.length == 0) return alert("Email Inválido");
+
     if (cpf.length == 0) return alert("CPF Inválido");
 
     if (telefone.length < 8) return alert("Telefone Inválido");
@@ -33,6 +35,13 @@ document.getElementById("formAdocao").addEventListener("submit", function (e) {
 
 
     if (adocao.length < 10) return alert("Motivo Inválido");
+
+    if (document.getElementById('quintal').checked) {
+  console.log('Marcado');
+} else {
+  console.log('Não marcado');
+}
+
 
     if (quintal.value == "") return alert("Campo obrigatório");
 
