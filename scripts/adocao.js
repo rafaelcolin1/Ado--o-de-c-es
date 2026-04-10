@@ -1,54 +1,73 @@
 document.getElementById("formAdocao").addEventListener("submit", function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    let nome = document.getElementById("nome").value;
-    let email = document.getElementById("email").value;
-    let moradia = document.getElementById("moradia").value;
-    let quintal = document.querySelector('input[name="quintal"]:checked');
-    let cpf = document.getElementById("cpf").value;
-    let telefone = document.getElementById("telefone").value;
-    let idade = document.getElementById("idade").value;
-    let cidade = document.getElementById("cidade").value;
-    let animal = document.getElementById("animal").value;
-    let adocao = document.getElementById("adocao").value;
+  let nome = document.getElementById("nome").value;
+  let email = document.getElementById("email").value;
+  let moradia = document.getElementById("moradia").value;
+  let quintal = document.querySelector('input[name="quintal"]:checked');
+  let cpf = document.getElementById("cpf").value;
+  let telefone = document.getElementById("telefone").value;
+  let idade = document.getElementById("idade").value;
+  let cidade = document.getElementById("cidade").value;
+  let animal = document.getElementById("animal").value;
+  let adocao = document.getElementById("adocao").value;
 
-    let pet = document.querySelector('input[name="pet"]:checked');
+  let pet = document.querySelector('input[name="pet"]:checked');
 
-    if (nome.length < 3) return alert("Nome Inválido");
+  if (nome.length < 3) return alert("Nome Inválido");
 
-    if (email.length == 0) return alert("Email Inválido");
+  if (email.length == 0) return alert("Email Inválido");
 
-    if (cpf.length == 0) return alert("CPF Inválido");
+  if (!email.includes("@")) return alert("Email Inválido");
 
-    if (telefone.length < 8) return alert("Telefone Inválido");
+  if (cpf.length == 0) return alert("CPF Inválido");
 
-    if (idade < 18) {
+  if (telefone.length < 8) return alert("Telefone Inválido");
 
-        alert("Menor de Idade Não Pode Adotar");
-    }
+  if (idade < 18) {
 
-    if (cidade.length == 0) return alert("Cidade Inválido");
+    alert("Menor de Idade Não Pode Adotar");
+  }
 
-    if (animal > 8) {
-        alert("Você não pode adotar esse animal, pois ficará tempo de mais sozinho");
-    }
+  if (cidade.length == 0) return alert("Cidade Inválido");
 
-
-    if (adocao.length < 10) return alert("Motivo Inválido");
-
-    if (document.getElementById('quintal').checked) {
-  console.log('Marcado');
-} else {
-  console.log('Não marcado');
-}
+  if (animal > 8) {
+    alert("Você não pode adotar esse animal, pois ficará tempo de mais sozinho");
+  }
 
 
-    if (quintal.value == "") return alert("Campo obrigatório");
+  if (adocao.length < 10) return alert("Motivo Inválido");
 
-    if (pet.value == "petnao") return alert("O animal poderá haver acompanhamento da ONG");
-
-    if (pet.value == "") return alert("Campo obrigatório");
+  if(quintal.value === "sim"){
 
 
-    document.getElementById("resultado").innerHTML = "Cadastro realizado com sucesso!<br>" + "Nome: " + nome;
+  }else (quintal.value === "nao"){
+    alert("Quintal Inválido!")
+  }
+
+    if(seguro.value === "sim"){
+
+
+  }else (seguro.value === "nao"){
+    alert("Seguro Inválido!")
+  }
+
+    if(pet.value === "sim"){
+
+
+  }else (pet.value === "nao"){
+    alert("Pet Inválido!")
+  }
+
+    if(quintal.value === "sim"){
+
+
+  }else (responsabilidade.value === "nao"){
+    alert("Responsabilidade Inválido!")
+  }
+
+
+
+
+  document.getElementById("resultado").innerHTML = "Cadastro realizado com sucesso!<br>" + "Nome: " + nome;
 });
